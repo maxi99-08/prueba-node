@@ -90,9 +90,9 @@ router.get('/deletepersona/:id', async (req, res) => {
     const { id } = req.params
     const { success, data } = await deletePersonaById(id)
     if (success) {
-        res.render('personas')
+        res.redirect('/personas');
     }
-    return res.status(500).json({ success: false, message: 'Error'})
+    //return res.status(500).json({ success: false, message: 'Error'})
 })
   
 
