@@ -50,23 +50,38 @@ router.get('/add', async(req, res) => {
     res.render('personas/add')
 })
 
-router.get('/edit', async(req, res) => {
-    res.render('personas/edit')
+router.get('/edit/:id', async(req, res) => {
+    try{
+        const {id} = req.params;
+
+        const { success, data } = await getPersonaById(id);
+        if(success){
+            res.render('personas/edit', {persona: data})
+        }
+        
+    }
+    catch(e){
+        res.status(500).json({message: e.message})
+    }
 })
 
 // Update Persona by ID
-router.put('/persona/:id', async(req, res) => {
-    const persona = req.body
-    const { id } = req.params
-    persona.id = parseInt(id)
+router.post('/personaUpd/:id', async(req, res) => {
+    try{
+        const persona = req.body
+        const { id } = req.params
+        persona.id = parseInt(id)
+        const { success, data } = await createOrUpdate(persona)
 
-    const { success, data } = await createOrUpdate(persona)
-
-    if(success){
-        return res.json({success, data})
+        if(success){
+            res.redirect('/personas');
+        }
+    }
+    catch(e){
+    res.status(500).json({message: e.message})
     }
 
-    return res.status(500).json({success: false, message: "Error"})
+
 })
 
 
