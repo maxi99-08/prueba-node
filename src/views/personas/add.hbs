@@ -1,0 +1,38 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">Crear nueva persona</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/persona" method="post">
+                        <div class="input-group mt-2">
+                            <label for="" class="input-group-text">ID</label>
+                            <input class="from-control" type="number" name="id" id="id" placeholder="100" autofocus required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="" class="input-group-text">Name</label>
+                            <input class="from-control" type="text" name="name" id="name" placeholder="Max Salizar" required>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="" class="input-group-text">Email</label>
+                            <input class="from-control" type="email" name="email" id="email" placeholder="maxsalizar@gmail.com" required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="" class="input-group-text">Phone</label>
+                            <input class="from-control" type="number" name="phone" id="phone" placeholder="910457628" required>
+                        </div>
+
+                        <div class="from-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success">Crear</button>
+                        </div>
+
+                    </form>
+                    <a href="/personas" class="d-block btn btn-danger mt-2">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

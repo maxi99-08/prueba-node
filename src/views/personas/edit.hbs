@@ -1,0 +1,33 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">Editar una persona</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/persona/{{persona.id}}" method="put">
+                        <div class="input-group mt-2">
+                            <label for="" class="input-group-text">Name</label>
+                            <input class="from-control" type="text" name="name" id="name" value="{{persona.name}}" placeholder="Max Salizar" autofocus required>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="" class="input-group-text">Email</label>
+                            <input class="from-control" type="text" name="email" id="email" value="{{persona.email}}"  placeholder="maxsalizar@gamil.com" required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="" class="input-group-text">Phone</label>
+                            <input class="from-control" type="number" name="phone" id="phone" value="{{persona.phone}}" placeholder="910457628" required>
+                        </div>
+
+                        <div class="from-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success">Actualizar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
